@@ -30,17 +30,20 @@ class Menu extends StatelessWidget {
             onPressed: (() => Navigator.pushNamed(
                 context, MainNavigationRouteNames.searchPokemon)),
             child: const Text('Search pokemon')),
-        const SizedBox(
-          height: 20,
-        ),
+        const SizedBox(height: 20,),
         ElevatedButton(
             onPressed: () async {
               Navigator.pushNamed(
                   context, MainNavigationRouteNames.randomPokemon);
-              // final int randomInt = Random().nextInt(800);
-              // await PokemonCubit.searchPokemon(randomInt.toString());
             },
             child: const Text('Show random pokemon')),
+        const SizedBox(height: 20,),
+        ElevatedButton(
+            onPressed: () async {
+              Navigator.pushNamed(
+                  context, MainNavigationRouteNames.guessPokemon);
+            },
+            child: const Text('Guess the pokemon')),
       ],
     ));
   }

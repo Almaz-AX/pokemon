@@ -43,21 +43,16 @@ class PokemonCubit extends Cubit<PokemonState> {
   PokemonCubit() : super(PokemonState());
 
   Future<void> searchPokemon(String name) async {
-    // try {
-    //   final newPokemon = await _apiClient.getPokemon(name);
-    //   emit(state.copyWith(pokemon: newPokemon, errorText: ''));
-    // } catch (e) {
-    //   emit(
-    //     state.copyWith(
-    //         errorText:
-    //             'Нет покемона с таким именем, попробуйте снова или введите id',
-    //           ),
-    //   );
-    //     print(e);
-      
-    // }
-
-    final newPokemon = await _apiClient.getPokemon(name);
-    emit(state.copyWith(pokemon: newPokemon, errorText: ''));
+    try {
+      final newPokemon = await _apiClient.getPokemon(name);
+      emit(state.copyWith(pokemon: newPokemon, errorText: ''));
+    } catch (e) {
+      emit(
+        state.copyWith(
+          errorText:
+              'Нет покемона с таким именем, попробуйте снова или введите id',
+        ),
+      );
+    }
   }
 }

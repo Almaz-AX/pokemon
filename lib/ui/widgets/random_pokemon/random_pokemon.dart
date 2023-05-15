@@ -28,7 +28,7 @@ class _RandomPokemon extends StatelessWidget {
         children: [
           ElevatedButton(
               onPressed: () async {
-                final int randomInt = Random().nextInt(800);
+                final int randomInt = Random().nextInt(1010);
                 await context
                     .read<PokemonCubit>()
                     .searchPokemon(randomInt.toString());
@@ -44,41 +44,3 @@ class _RandomPokemon extends StatelessWidget {
     );
   }
 }
-
-// class _SearchForm extends StatefulWidget {
-//   const _SearchForm({
-//     Key? key,
-//   }) : super(key: key);
-
-//   @override
-//   State<_SearchForm> createState() => _SearchFormState();
-// }
-
-// class _SearchFormState extends State<_SearchForm> {
-//   final TextEditingController _controller = TextEditingController();
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-//         TextFormField(
-//           controller: _controller,
-//           onEditingComplete: () {
-//             context.read<PokemonCubit>().searchPokemon(_controller.text);
-//             FocusManager.instance.primaryFocus?.unfocus();
-//           },
-//           decoration: const InputDecoration(hintText: 'Input pokemon name'),
-//         ),
-//         ElevatedButton(
-//             onPressed: () async {
-//               await context
-//                   .read<PokemonCubit>()
-//                   .searchPokemon(_controller.text);
-//               FocusManager.instance.primaryFocus?.unfocus();
-//             },
-//             child: const Text('Search')),
-//       ],
-//     );
-//   }
-// }
-
-

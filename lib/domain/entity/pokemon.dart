@@ -8,7 +8,7 @@ part 'pokemon.g.dart';
 class Pokemon {
   final int id;
   final String name;
-  final int baseExperience;
+  final int? baseExperience;
   final int height;
   final int weight;
   final bool isDefault;
@@ -25,7 +25,7 @@ class Pokemon {
   Pokemon({
     required this.id,
     required this.name,
-    required this.baseExperience,
+    this.baseExperience,
     required this.height,
     required this.isDefault,
     required this.abilities,

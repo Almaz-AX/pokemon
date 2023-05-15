@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\flutter_projects\pokemon\build\windows\CMakeFiles\e95d64a0d78ee4d20d4f7c6586bf7f6e\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{00E4DB6A-A523-3A2A-BC8E-EB3224CC9E0A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

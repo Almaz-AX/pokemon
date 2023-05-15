@@ -5,7 +5,7 @@
 Pokemon _$PokemonFromJson(Map<String, dynamic> json) => Pokemon(
       id: json['id'] as int,
       name: json['name'] as String,
-      baseExperience: json['base_experience'] as int,
+      baseExperience: json['base_experience'] as int?,
       height: json['height'] as int,
       isDefault: json['is_default'] as bool,
       abilities: Pokemon._parseAbilities(json['abilities'] as List),
@@ -54,13 +54,13 @@ Map<String, dynamic> _$AbilityToJson(Ability instance) => <String, dynamic>{
 
 PokemonSprites _$PokemonSpritesFromJson(Map<String, dynamic> json) =>
     PokemonSprites(
-      backDefault: json['back_default'] as String,
+      backDefault: json['back_default'] as String?,
       backFemale: json['back_female'] as String?,
-      backShiny: json['back_shiny'] as String,
+      backShiny: json['back_shiny'] as String?,
       backShinyFemale: json['back_shiny_female'] as String?,
-      frontDefault: json['front_default'] as String,
+      frontDefault: json['front_default'] as String?,
       frontFemale: json['front_female'] as String?,
-      frontShiny: json['front_shiny'] as String,
+      frontShiny: json['front_shiny'] as String?,
       frontShinyFemale: json['front_shiny_female'] as String?,
       other: Other.fromJson(json['other'] as Map<String, dynamic>),
     );

@@ -11,11 +11,11 @@ class PokemonCard extends StatelessWidget {
     return BlocBuilder<PokemonCubit, PokemonState>(builder: (context, state) {
       final pokemon = state.pokemon;
       if (pokemon == null) {
-        return Container();
+        return Text(state.errorText, style: const TextStyle(color: Colors.red),);
       }
       return Column(
         children: [
-          if (state.errorText.isNotEmpty) Text(state.errorText),
+          if (state.errorText.isNotEmpty) Text(state.errorText, style: const TextStyle(color: Colors.red),),
           Text(
             pokemon.name.toUpperCase(),
             style: const TextStyle(fontSize: 25),
@@ -47,8 +47,6 @@ class PokemonCard extends StatelessWidget {
             ),
           ),
           Row(children: [
-            // Text('Type: ${pokemon.types.map((e) => e.name).toString()}'),
-            // const Expanded(child: SizedBox()),
             Text('Base experience: ${pokemon.baseExperience}'),
             const Expanded(child: SizedBox()),
             Text('Base Stat: ${pokemon.stats.first.baseStat}')
